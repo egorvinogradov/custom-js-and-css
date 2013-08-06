@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom JS &amp; CSS</title>
+    <link rel="stylesheet" href="css/options.css">
+    <script src="js/libs/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+    <script src="js/options.js"></script>
+</head>
+<body class="options">
+
+    <h2 class="options__h2">Custom JS & CSS</h2>
+
+    <ul class="installed"></ul>
+
+    <h3 class="options__h3">Install new script</h3>
+
+    <div class="setup">
+
+        <input class="setup__id" type="hidden">
+        <input class="setup__hosts" placeholder="Hosts">
+        <div class="setup__type">
+            <label class="setup__type-label">
+                <input class="setup__type-radio" type="radio" name="setup_type" checked>
+                <span class="setup__type-title">URL</span>
+            </label>
+            <label class="setup__type-label">
+                <input class="setup__type-radio" type="radio" name="setup_type">
+                <span class="setup__type-title">File</span>
+            </label>
+            <label class="setup__type-label">
+                <input class="setup__type-radio" type="radio" name="setup_type">
+                <span class="setup__type-title">Code</span>
+            </label>
+        </div>
+
+        <div class="setup__scripts">
+
+            <div class="setup__scripts_url hidden">
+                <textarea class="setup__scripts-url-textarea" placeholder="Script or stylesheet URLs"></textarea>
+            </div>
+
+            <div class="setup__scripts_file hidden">
+                <div class="setup__scripts-file-item">
+                    <input class="setup__scripts-file-input" type="file">
+                    <button class="setup__scripts-file-add">+</button>
+                </div>
+            </div>
+
+            <div class="setup__scripts_code">
+                <textarea class="setup__scripts-code-textarea"></textarea>
+            </div>
+
+        </div>
+
+        <button class="setup__button">Install</button>
+    </div>
+
+    <script type="application/template" id="installed__item">
+
+        <li class="installed__item" data-id="<%= id %>">
+            <label>
+                <% var hostTitle = hosts[0] === '*' ? 'All' : hosts.join(', '); %>
+                <% var hostStr = hosts[0] === '*' ? 'All' : hosts.join(',<br>'); %>
+                <input class="installed__checkbox" type="checkbox"<%= enabled ? ' checked' : '' %>>
+                <span class="installed__hosts" title="<%= hostTitle %>"><%= hostStr %></span>
+            </label>
+            <ul class="installed__scripts">
+                <% _.each(scripts, function(script){ %>
+                    <li class="installed__scripts-item">
+                        <a class="installed__scripts-link" target="_blank" href="<%= script %>"><%= script %></a>
+                    </li>
+                <% }); %>
+            </ul>
+            <button class="installed__edit">Edit</button>
+            <button class="installed__remove">Remove</button>
+        </li>
+
+    </script>
+
+</body>
+</html>

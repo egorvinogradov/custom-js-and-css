@@ -1,0 +1,140 @@
+html, body, ul, li, h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+input, button {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.options {
+    padding: 30px 30px;
+    font-family: 'Lucida Grande', sans-serif;
+    font-size: 14px;
+}
+
+.options__h2 {
+    margin-bottom: 20px;
+}
+
+.options__h3 {
+    margin-bottom: 18px;
+}
+
+.installed {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.installed__item {
+    padding: 9px 10px;
+    float: left;
+    clear: both;
+}
+
+.installed__item:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.installed__checkbox,
+.installed__hosts,
+.installed__scripts {
+    display: inline-block;
+}
+
+.installed__checkbox {
+    vertical-align: baseline;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+}
+
+.installed__checkbox:not(:checked) + .installed__hosts {
+    color: #bbb;
+}
+
+.installed__hosts {
+    vertical-align: top;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.installed__scripts {
+    vertical-align: top;
+}
+
+.installed__scripts-item {
+    width: 390px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.installed__edit {
+    vertical-align: baseline;
+    margin-left: 15px;
+}
+
+.installed__remove {
+    vertical-align: baseline;
+    margin-left: 5px;
+}
+
+.setup__hosts {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.setup__type {
+    margin: 5px 0 15px 0;
+    font-size: 12px;
+}
+
+.setup__type-label {
+    margin-right: 15px;
+}
+
+.setup__scripts {
+    margin-bottom: 15px;
+}
+
+.setup__scripts-url-textarea {
+    width: 400px;
+    display: block;
+    height: 70px;
+}
+
+.setup__hosts,
+.setup__scripts-url-textarea,
+.setup__scripts-code-textarea {
+    padding: 3px;
+    border: 1px solid rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.12);
+}
+
+.setup__scripts-file-input {
+    width: 257px;
+}
+
+.setup__scripts-file-add {
+    padding: 0 3px;
+    line-height: 18px;
+    height: 18px;
+}
+
+.setup__scripts-code-textarea {
+    height: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.setup__button {
+    padding: 4px 12px;
+}
